@@ -1,3 +1,55 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  font-family: Calibri, sans-serif;
+}
 
+html {
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* Static Header */
+.navBar {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5514b4;
+  height: 10vh;
+}
+.navBar .BTlogo {
+  background-color: yellowgreen;
+  background-image: url("https://img01.bt.co.uk/s/assets/191120/images/logo/logo-2018.svg");
+  height: 1000px;
+}
+.navBar .title {
+  color: #ffffff;
+  display: inline-block;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Static Footer */
+.footer {
+  background-color: #5514b4;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+}
+.footer h4 {
+  color: white;
+  display: inline-block;
+  justify-content: center;
+  font-weight: bold;
+  padding: 20px;
+}
 
 /*# sourceMappingURL=main.css.map */

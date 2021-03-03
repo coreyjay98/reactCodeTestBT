@@ -1,0 +1,58 @@
+$color-BTpurple: #5514b4;
+$color-BTpink: #e60050;
+
+$color-white: #ffffff;
+$color-black: #333333;
+
+/* CSS Reset */
+* {
+  margin: 0;
+  font-family: Calibri, sans-serif;
+}
+html {
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  overflow: hidden;
+  background-color: $color-white;
+}
+
+/* Static Header */
+.navBar {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-BTpurple;
+  height: 10vh;
+  .BTlogo {
+    background-color: yellowgreen;
+    background-image: url('https://img01.bt.co.uk/s/assets/191120/images/logo/logo-2018.svg');
+    height: 1000px;
+  }
+  .title {
+    color: $color-white;
+    display: inline-block;
+    justify-content: center;
+    font-weight: bold;
+  }
+}
+
+/* Static Footer */
+.footer {
+  background-color: $color-BTpurple;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  h4 {
+    color: white;
+    display: inline-block;
+    justify-content: center;
+    font-weight: bold;
+    padding: 20px;
+  }
+}
