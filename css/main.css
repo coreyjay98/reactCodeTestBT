@@ -14,7 +14,7 @@ html {
   background-color: #ffffff;
 }
 
-/* Static Header */
+/* Static Header, using Flexbox */
 .navBar {
   color: #ffffff;
   display: flex;
@@ -50,6 +50,69 @@ html {
   justify-content: center;
   font-weight: bold;
   padding: 20px;
+}
+
+.articleDisplay {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 70vh;
+  padding-bottom: 20px;
+}
+.articleDisplay * {
+  font-family: Calibri, sans-serif;
+}
+.articleDisplay .article {
+  margin: 10px;
+  padding: 5px;
+}
+.articleDisplay .article .imageDiv {
+  height: 20vh;
+  width: 100%;
+}
+.articleDisplay .article .title {
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 24px;
+}
+.articleDisplay .article .content {
+  padding: 10px;
+  display: inline-block;
+  border-radius: 15px;
+}
+.articleDisplay .article .author {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.articleDisplay .article a {
+  display: contents;
+  margin-top: 0;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+}
+.articleDisplay .article .link {
+  background-color: #5514b4;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.articleDisplay .article .link:hover {
+  border-color: #333333;
+  cursor: pointer;
+  caret-color: transparent;
+}
+@media screen and (max-width: 500px) {
+  .articleDisplay .article .author {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

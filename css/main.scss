@@ -19,7 +19,7 @@ html {
   background-color: $color-white;
 }
 
-/* Static Header */
+/* Static Header, using Flexbox */
 .navBar {
   color: #ffffff;
   display: flex;
@@ -54,5 +54,68 @@ html {
     justify-content: center;
     font-weight: bold;
     padding: 20px;
+  }
+}
+
+.articleDisplay {
+  * {
+    font-family: Calibri, sans-serif;
+  }
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 70vh;
+  padding-bottom: 20px;
+  .article {
+    margin: 10px;
+    padding: 5px;
+    .imageDiv {
+      height: 20vh;
+      width: 100%;
+    }
+    .title {
+      font-weight: bold;
+      display: inline-block;
+      padding: 5px;
+      margin-top: 5px;
+      font-size: 24px;
+    }
+    .content {
+      padding: 10px;
+      display: inline-block;
+      border-radius: 15px;
+    }
+    .author {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    a {
+      display: contents;
+      margin-top: 0;
+      border-radius: 15px;
+      justify-content: center;
+      align-items: center;
+      background-color: blue;
+    }
+    .link {
+      background-color: $color-BTpurple;
+      color: $color-white;
+      font-weight: bold;
+      margin-top: 15px;
+      padding: 15px;
+      text-decoration: none;
+      border-radius: 10px;
+      &:hover {
+        border-color: $color-black;
+        cursor: pointer;
+        caret-color: transparent;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .author {
+        display: none;
+      }
+    }
   }
 }
