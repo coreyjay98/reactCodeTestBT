@@ -1,0 +1,223 @@
+$colour-BTpurple: #5514b4;
+$colour-BTpink: #e60050;
+$colour-white: #ffffff;
+$colour-black: #333333;
+
+/* CSS Reset */
+* {
+  margin: 0;
+  font-family: Calibri, sans-serif;
+}
+html {
+  overflow: hidden;
+  height: 100%;
+}
+.root {
+  height: 100%;
+}
+.App {
+  text-align: center;
+  overflow: hidden;
+  background-color: $colour-white;
+  height: 100%;
+}
+
+/* Static Header, using Flexbox */
+.navBar {
+  * {
+    color: #ffffff;
+  }
+  display: flex;
+  justify-content: left;
+  /* Stop Items floating up */
+  align-items: center;
+  background-color: $colour-BTpurple;
+  height: 80px;
+  .BTimage {
+    background-image: url('https://img01.bt.co.uk/s/assets/191120/images/logo/logo-2018.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+    height: 80%;
+    width: 12vh;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .title {
+    color: $colour-white;
+    display: inline-block;
+    justify-content: center;
+    font-weight: normal;
+    font-size: 50px;
+    /* Aligning with image */
+    display: contents;
+  }
+}
+
+.mainContent {
+  * {
+    color: $colour-black;
+  }
+  height: 100%;
+  padding-top: 10px;
+  .title {
+    font-weight: normal;
+  }
+  .searchInputForm {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .searchInput {
+      vertical-align: middle;
+      width: 60%;
+      max-width: 550px;
+      height: 36px;
+      border: 1px solid $colour-BTpurple;
+      border-radius: 5px;
+      padding-left: 5px;
+      font-size: 18px;
+    }
+    button {
+      vertical-align: middle;
+      color: $colour-white;
+      margin-left: 10px;
+      background-color: $colour-BTpurple;
+      border: none;
+      border-radius: 5px;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 5px;
+      min-width: 80px;
+      width: 30%;
+      max-width: 350px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 1px solid white;
+      caret-color: transparent;
+      box-sizing: border-box;
+      &:hover {
+        border-color: $colour-black;
+        cursor: pointer;
+        caret-color: transparent;
+      }
+      &:active {
+        border-color: $colour-black;
+      }
+    }
+  }
+}
+.articleDisplay {
+  * {
+    font-family: Calibri, sans-serif;
+  }
+  width: 100%;
+  display: flex;
+  /* makes flex items go into column when small */
+  flex-wrap: wrap;
+  /* Scrollable for articleDisplay */
+  overflow-y: scroll;
+  height: 76vh;
+  padding-bottom: 20px;
+  .fetchIndicator {
+    width: 100%;
+    align-items: center;
+    h1 {
+      font-weight: normal;
+    }
+  }
+  .article {
+    position: relative;
+    margin: 10px;
+    padding: 5px;
+    .imageDiv {
+      height: 20vh;
+      width: 100%;
+    }
+    .title {
+      font-weight: bold;
+      display: inline-block;
+      padding: 5px;
+      margin-top: 5px;
+      font-size: 24px;
+    }
+    .content {
+      padding: 10px;
+      display: inline-block;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+    .author {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    a {
+      display: contents;
+      border-radius: 15px;
+      justify-content: center;
+      align-items: center;
+      background-color: blue;
+      text-decoration: none;
+    }
+    .link {
+      background-color: $colour-BTpink;
+      color: $colour-white;
+      font-weight: bold;
+      margin-top: 15px;
+      padding: 15px;
+      text-decoration: none;
+      border-radius: 10px;
+      &:hover {
+        border-color: $colour-black;
+        cursor: pointer;
+        caret-color: transparent;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .author {
+        /* Author took up too much space on small screen so remove at 500px */
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-height: 760px) {
+  .articleDisplay {
+    /* Adjust height for smaller screens like macbook */
+    height: 73vh;
+  }
+}
+@media screen and (min-width: 650px) {
+  .articleDisplay {
+    justify-content: center;
+  }
+  .articleDisplay .article {
+    /* This is making items split in rows when screen size gets bigger  */
+    flex: 1 1 30%; /*grow | shrink | basis */
+  }
+}
+/* Static Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $colour-BTpurple;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  h4 {
+    color: white;
+    justify-content: center;
+    vertical-align: middle;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer h4 {
+    font-size: 15px;
+    padding: 5px;
+    margin-top: 5px;
+  }
+}

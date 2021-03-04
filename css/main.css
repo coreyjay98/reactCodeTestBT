@@ -1,246 +1,227 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  font-family: Calibri, sans-serif;
+}
 
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-}
-
-/*
- * Remove text-shadow in selection highlight:
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
   overflow: hidden;
-  padding: 0;
+  height: 100%;
+}
+
+.root {
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  overflow: hidden;
+  background-color: #ffffff;
+  height: 100%;
+}
+
+/* Static Header, using Flexbox */
+.navBar {
+  display: flex;
+  justify-content: left;
+  /* Stop Items floating up */
+  align-items: center;
+  background-color: #5514b4;
+  height: 80px;
+}
+.navBar * {
+  color: #ffffff;
+}
+.navBar .BTimage {
+  background-image: url("https://img01.bt.co.uk/s/assets/191120/images/logo/logo-2018.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+  height: 80%;
+  width: 12vh;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.navBar .title {
+  color: #ffffff;
+  display: inline-block;
+  justify-content: center;
+  font-weight: normal;
+  font-size: 50px;
+  /* Aligning with image */
+  display: contents;
+}
+
+.mainContent {
+  height: 100%;
+  padding-top: 10px;
+}
+.mainContent * {
+  color: #333333;
+}
+.mainContent .title {
+  font-weight: normal;
+}
+.mainContent .searchInputForm {
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.mainContent .searchInputForm .searchInput {
+  vertical-align: middle;
+  width: 60%;
+  max-width: 550px;
+  height: 36px;
+  border: 1px solid #5514b4;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 18px;
+}
+.mainContent .searchInputForm button {
+  vertical-align: middle;
+  color: #ffffff;
+  margin-left: 10px;
+  background-color: #5514b4;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 5px;
+  min-width: 80px;
+  width: 30%;
+  max-width: 350px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid white;
+  caret-color: transparent;
+  box-sizing: border-box;
+}
+.mainContent .searchInputForm button:hover {
+  border-color: #333333;
+  cursor: pointer;
+  caret-color: transparent;
+}
+.mainContent .searchInputForm button:active {
+  border-color: #333333;
+}
+
+.articleDisplay {
+  width: 100%;
+  display: flex;
+  /* makes flex items go into column when small */
+  flex-wrap: wrap;
+  /* Scrollable for articleDisplay */
+  overflow-y: scroll;
+  height: 76vh;
+  padding-bottom: 20px;
+}
+.articleDisplay * {
+  font-family: Calibri, sans-serif;
+}
+.articleDisplay .fetchIndicator {
+  width: 100%;
+  align-items: center;
+}
+.articleDisplay .fetchIndicator h1 {
+  font-weight: normal;
+}
+.articleDisplay .article {
+  position: relative;
+  margin: 10px;
+  padding: 5px;
+}
+.articleDisplay .article .imageDiv {
+  height: 20vh;
+  width: 100%;
+}
+.articleDisplay .article .title {
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 24px;
+}
+.articleDisplay .article .content {
+  padding: 10px;
+  display: inline-block;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.articleDisplay .article .author {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.articleDisplay .article a {
+  display: contents;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  text-decoration: none;
+}
+.articleDisplay .article .link {
+  background-color: #e60050;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.articleDisplay .article .link:hover {
+  border-color: #333333;
+  cursor: pointer;
+  caret-color: transparent;
+}
+@media screen and (max-width: 500px) {
+  .articleDisplay .article .author {
+    /* Author took up too much space on small screen so remove at 500px */
+    display: none;
+  }
+}
+
+@media screen and (max-height: 760px) {
+  .articleDisplay {
+    /* Adjust height for smaller screens like macbook */
+    height: 73vh;
+  }
+}
+@media screen and (min-width: 650px) {
+  .articleDisplay {
+    justify-content: center;
+  }
+
+  .articleDisplay .article {
+    /* This is making items split in rows when screen size gets bigger  */
+    flex: 1 1 30%;
+    /*grow | shrink | basis */
+  }
+}
+/* Static Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #5514b4;
+  height: 5vh;
   position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+}
+.footer h4 {
+  color: white;
+  justify-content: center;
+  vertical-align: middle;
+  font-weight: bold;
 }
 
-/*
- * Extends the .sr-only class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
-}
-
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
-}
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
+@media screen and (max-width: 400px) {
+  .footer h4 {
+    font-size: 15px;
+    padding: 5px;
+    margin-top: 5px;
   }
 }
 
+/*# sourceMappingURL=main.css.map */
