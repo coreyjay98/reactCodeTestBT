@@ -4,12 +4,13 @@ const MainLayout = () => {
     <div className="App">
       {/* Header  */}
       <div className="navBar ">
-        <h1 className="title">BT React Code Test</h1>
+        <div className="BTimage"></div>
+        <h1 className="title">News</h1>
       </div>
       <MainContent />
       {/* Footer */}
       <div className="footer">
-        <h4>Corey Samuels 3/4/2021</h4>
+        <h4>BT React Code Test - by Corey Samuels - 4/04/21</h4>
       </div>
     </div>
   );

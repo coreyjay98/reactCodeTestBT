@@ -16,23 +16,34 @@ html {
 
 /* Static Header, using Flexbox */
 .navBar {
-  color: #ffffff;
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  /* Stop Items floating up */
   align-items: center;
   background-color: #5514b4;
-  height: 10vh;
+  height: 80px;
 }
-.navBar .BTlogo {
-  background-color: yellowgreen;
+.navBar * {
+  color: #ffffff;
+}
+.navBar .BTimage {
   background-image: url("https://img01.bt.co.uk/s/assets/191120/images/logo/logo-2018.svg");
-  height: 1000px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+  height: 80%;
+  width: 12vh;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .navBar .title {
   color: #ffffff;
   display: inline-block;
   justify-content: center;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 50px;
+  /* Aligning with image */
+  display: contents;
 }
 
 .mainContent {
@@ -47,23 +58,33 @@ html {
 }
 .mainContent .searchInputForm {
   margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .mainContent .searchInputForm .searchInput {
   vertical-align: middle;
-  width: 150px;
-  font-size: 24px;
+  width: 60%;
+  max-width: 550px;
+  height: 36px;
+  border: 1px solid #5514b4;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 18px;
 }
 .mainContent .searchInputForm button {
   vertical-align: middle;
   color: #ffffff;
   margin-left: 10px;
-  background-color: #e60050;
+  background-color: #5514b4;
   border: none;
-  border-radius: 15px;
+  border-radius: 5px;
   height: 40px;
   padding: 0 20px;
   border-radius: 5px;
   min-width: 80px;
+  width: 30%;
+  max-width: 350px;
   font-size: 16px;
   font-weight: bold;
   border: 1px solid white;
@@ -86,11 +107,18 @@ html {
   flex-wrap: wrap;
   /* Scrollable for articleDisplay */
   overflow-y: scroll;
-  height: 69vh;
+  height: 75vh;
   padding-bottom: 20px;
 }
 .articleDisplay * {
   font-family: Calibri, sans-serif;
+}
+.articleDisplay .fetchIndicator {
+  width: 100%;
+  align-items: center;
+}
+.articleDisplay .fetchIndicator h1 {
+  font-weight: normal;
 }
 .articleDisplay .article {
   margin: 10px;
@@ -122,9 +150,11 @@ html {
   border-radius: 15px;
   justify-content: center;
   align-items: center;
+  background-color: blue;
+  text-decoration: none;
 }
 .articleDisplay .article .link {
-  background-color: #5514b4;
+  background-color: #e60050;
   color: #ffffff;
   font-weight: bold;
   margin-top: 15px;
@@ -159,7 +189,7 @@ html {
 .footer {
   background-color: #5514b4;
   height: 5vh;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   justify-content: center;
@@ -170,6 +200,14 @@ html {
   justify-content: center;
   font-weight: bold;
   padding: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .footer h4 {
+    font-size: 15px;
+    padding: 5px;
+    margin-top: 5px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

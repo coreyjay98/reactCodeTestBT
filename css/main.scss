@@ -1,6 +1,5 @@
 $colour-BTpurple: #5514b4;
 $colour-BTpink: #e60050;
-
 $colour-white: #ffffff;
 $colour-black: #333333;
 
@@ -21,22 +20,33 @@ html {
 
 /* Static Header, using Flexbox */
 .navBar {
-  color: $colour-white;
+  * {
+    color: #ffffff;
+  }
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  /* Stop Items floating up */
   align-items: center;
   background-color: $colour-BTpurple;
-  height: 10vh;
-  .BTlogo {
-    background-color: yellowgreen;
+  height: 80px;
+  .BTimage {
     background-image: url('https://img01.bt.co.uk/s/assets/191120/images/logo/logo-2018.svg');
-    height: 1000px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+    height: 80%;
+    width: 12vh;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .title {
     color: $colour-white;
     display: inline-block;
     justify-content: center;
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 50px;
+    /* Aligning with image */
+    display: contents;
   }
 }
 
@@ -51,22 +61,32 @@ html {
   }
   .searchInputForm {
     margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     .searchInput {
       vertical-align: middle;
-      width: 150px;
-      font-size: 24px;
+      width: 60%;
+      max-width: 550px;
+      height: 36px;
+      border: 1px solid $colour-BTpurple;
+      border-radius: 5px;
+      padding-left: 5px;
+      font-size: 18px;
     }
     button {
       vertical-align: middle;
       color: $colour-white;
       margin-left: 10px;
-      background-color: $colour-BTpink;
+      background-color: $colour-BTpurple;
       border: none;
-      border-radius: 15px;
+      border-radius: 5px;
       height: 40px;
       padding: 0 20px;
       border-radius: 5px;
       min-width: 80px;
+      width: 30%;
+      max-width: 350px;
       font-size: 16px;
       font-weight: bold;
       border: 1px solid white;
@@ -83,7 +103,6 @@ html {
     }
   }
 }
-
 .articleDisplay {
   * {
     font-family: Calibri, sans-serif;
@@ -94,8 +113,15 @@ html {
   flex-wrap: wrap;
   /* Scrollable for articleDisplay */
   overflow-y: scroll;
-  height: 69vh;
+  height: 75vh;
   padding-bottom: 20px;
+  .fetchIndicator {
+    width: 100%;
+    align-items: center;
+    h1 {
+      font-weight: normal;
+    }
+  }
   .article {
     margin: 10px;
     padding: 5px;
@@ -125,9 +151,11 @@ html {
       border-radius: 15px;
       justify-content: center;
       align-items: center;
+      background-color: blue;
+      text-decoration: none;
     }
     .link {
-      background-color: $colour-BTpurple;
+      background-color: $colour-BTpink;
       color: $colour-white;
       font-weight: bold;
       margin-top: 15px;
@@ -148,7 +176,6 @@ html {
     }
   }
 }
-
 @media screen and (min-width: 650px) {
   .articleDisplay {
     justify-content: center;
@@ -158,12 +185,11 @@ html {
     flex: 1 1 30%; /*grow | shrink | basis */
   }
 }
-
 /* Static Footer */
 .footer {
   background-color: $colour-BTpurple;
   height: 5vh;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   justify-content: center;
@@ -173,5 +199,13 @@ html {
     justify-content: center;
     font-weight: bold;
     padding: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footer h4 {
+    font-size: 15px;
+    padding: 5px;
+    margin-top: 5px;
   }
 }
