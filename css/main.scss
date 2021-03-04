@@ -1,8 +1,8 @@
-$color-BTpurple: #5514b4;
-$color-BTpink: #e60050;
+$colour-BTpurple: #5514b4;
+$colour-BTpink: #e60050;
 
-$color-white: #ffffff;
-$color-black: #333333;
+$colour-white: #ffffff;
+$colour-black: #333333;
 
 /* CSS Reset */
 * {
@@ -16,16 +16,16 @@ html {
 .App {
   text-align: center;
   overflow: hidden;
-  background-color: $color-white;
+  background-color: $colour-white;
 }
 
 /* Static Header, using Flexbox */
 .navBar {
-  color: #ffffff;
+  color: $colour-white;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-BTpurple;
+  background-color: $colour-BTpurple;
   height: 10vh;
   .BTlogo {
     background-color: yellowgreen;
@@ -33,27 +33,54 @@ html {
     height: 1000px;
   }
   .title {
-    color: $color-white;
+    color: $colour-white;
     display: inline-block;
     justify-content: center;
     font-weight: bold;
   }
 }
 
-/* Static Footer */
-.footer {
-  background-color: $color-BTpurple;
-  height: 5vh;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  justify-content: center;
-  h4 {
-    color: white;
-    display: inline-block;
-    justify-content: center;
-    font-weight: bold;
-    padding: 20px;
+.mainContent {
+  * {
+    color: $colour-black;
+  }
+  height: 100%;
+  padding-top: 10px;
+  .title {
+    font-weight: normal;
+  }
+  .searchInputForm {
+    margin-bottom: 15px;
+    .searchInput {
+      vertical-align: middle;
+      width: 150px;
+      font-size: 24px;
+    }
+    button {
+      vertical-align: middle;
+      color: $colour-white;
+      margin-left: 10px;
+      background-color: $colour-BTpink;
+      border: none;
+      border-radius: 15px;
+      height: 40px;
+      padding: 0 20px;
+      border-radius: 5px;
+      min-width: 80px;
+      font-size: 16px;
+      font-weight: bold;
+      border: 1px solid white;
+      caret-color: transparent;
+      box-sizing: border-box;
+      &:hover {
+        border-color: $colour-black;
+        cursor: pointer;
+        caret-color: transparent;
+      }
+      &:active {
+        border-color: $colour-black;
+      }
+    }
   }
 }
 
@@ -63,9 +90,11 @@ html {
   }
   width: 100%;
   display: flex;
+  /* makes flex items go into column when small */
   flex-wrap: wrap;
+  /* Scrollable for articleDisplay */
   overflow-y: scroll;
-  height: 70vh;
+  height: 69vh;
   padding-bottom: 20px;
   .article {
     margin: 10px;
@@ -85,6 +114,7 @@ html {
       padding: 10px;
       display: inline-block;
       border-radius: 15px;
+      margin-bottom: 10px;
     }
     .author {
       font-weight: bold;
@@ -92,30 +122,56 @@ html {
     }
     a {
       display: contents;
-      margin-top: 0;
       border-radius: 15px;
       justify-content: center;
       align-items: center;
-      background-color: blue;
     }
     .link {
-      background-color: $color-BTpurple;
-      color: $color-white;
+      background-color: $colour-BTpurple;
+      color: $colour-white;
       font-weight: bold;
       margin-top: 15px;
       padding: 15px;
       text-decoration: none;
       border-radius: 10px;
       &:hover {
-        border-color: $color-black;
+        border-color: $colour-black;
         cursor: pointer;
         caret-color: transparent;
       }
     }
     @media screen and (max-width: 500px) {
       .author {
+        /* Author took up too much space on small screen so remove at 500px */
         display: none;
       }
     }
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .articleDisplay {
+    justify-content: center;
+  }
+  .articleDisplay .article {
+    /* This is making items split in rows when screen size gets bigger  */
+    flex: 1 1 30%; /*grow | shrink | basis */
+  }
+}
+
+/* Static Footer */
+.footer {
+  background-color: $colour-BTpurple;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  h4 {
+    color: white;
+    display: inline-block;
+    justify-content: center;
+    font-weight: bold;
+    padding: 20px;
   }
 }

@@ -35,29 +35,58 @@ html {
   font-weight: bold;
 }
 
-/* Static Footer */
-.footer {
-  background-color: #5514b4;
-  height: 5vh;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  justify-content: center;
+.mainContent {
+  height: 100%;
+  padding-top: 10px;
 }
-.footer h4 {
-  color: white;
-  display: inline-block;
-  justify-content: center;
+.mainContent * {
+  color: #333333;
+}
+.mainContent .title {
+  font-weight: normal;
+}
+.mainContent .searchInputForm {
+  margin-bottom: 15px;
+}
+.mainContent .searchInputForm .searchInput {
+  vertical-align: middle;
+  width: 150px;
+  font-size: 24px;
+}
+.mainContent .searchInputForm button {
+  vertical-align: middle;
+  color: #ffffff;
+  margin-left: 10px;
+  background-color: #e60050;
+  border: none;
+  border-radius: 15px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 5px;
+  min-width: 80px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 20px;
+  border: 1px solid white;
+  caret-color: transparent;
+  box-sizing: border-box;
+}
+.mainContent .searchInputForm button:hover {
+  border-color: #333333;
+  cursor: pointer;
+  caret-color: transparent;
+}
+.mainContent .searchInputForm button:active {
+  border-color: #333333;
 }
 
 .articleDisplay {
   width: 100%;
   display: flex;
+  /* makes flex items go into column when small */
   flex-wrap: wrap;
+  /* Scrollable for articleDisplay */
   overflow-y: scroll;
-  height: 70vh;
+  height: 69vh;
   padding-bottom: 20px;
 }
 .articleDisplay * {
@@ -82,6 +111,7 @@ html {
   padding: 10px;
   display: inline-block;
   border-radius: 15px;
+  margin-bottom: 10px;
 }
 .articleDisplay .article .author {
   font-weight: bold;
@@ -89,11 +119,9 @@ html {
 }
 .articleDisplay .article a {
   display: contents;
-  margin-top: 0;
   border-radius: 15px;
   justify-content: center;
   align-items: center;
-  background-color: blue;
 }
 .articleDisplay .article .link {
   background-color: #5514b4;
@@ -111,8 +139,37 @@ html {
 }
 @media screen and (max-width: 500px) {
   .articleDisplay .article .author {
+    /* Author took up too much space on small screen so remove at 500px */
     display: none;
   }
+}
+
+@media screen and (min-width: 650px) {
+  .articleDisplay {
+    justify-content: center;
+  }
+
+  .articleDisplay .article {
+    /* This is making items split in rows when screen size gets bigger  */
+    flex: 1 1 30%;
+    /*grow | shrink | basis */
+  }
+}
+/* Static Footer */
+.footer {
+  background-color: #5514b4;
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+}
+.footer h4 {
+  color: white;
+  display: inline-block;
+  justify-content: center;
+  font-weight: bold;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
