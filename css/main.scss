@@ -10,12 +10,16 @@ $colour-black: #333333;
 }
 html {
   overflow: hidden;
+  height: 100%;
 }
-
+.root {
+  height: 100%;
+}
 .App {
   text-align: center;
   overflow: hidden;
   background-color: $colour-white;
+  height: 100%;
 }
 
 /* Static Header, using Flexbox */
@@ -113,7 +117,7 @@ html {
   flex-wrap: wrap;
   /* Scrollable for articleDisplay */
   overflow-y: scroll;
-  height: 75vh;
+  height: 76vh;
   padding-bottom: 20px;
   .fetchIndicator {
     width: 100%;
@@ -123,6 +127,7 @@ html {
     }
   }
   .article {
+    position: relative;
     margin: 10px;
     padding: 5px;
     .imageDiv {
@@ -176,6 +181,12 @@ html {
     }
   }
 }
+@media screen and (max-height: 760px) {
+  .articleDisplay {
+    /* Adjust height for smaller screens like macbook */
+    height: 73vh;
+  }
+}
 @media screen and (min-width: 650px) {
   .articleDisplay {
     justify-content: center;
@@ -187,18 +198,19 @@ html {
 }
 /* Static Footer */
 .footer {
+  display: flex;
+  flex-direction: column;
   background-color: $colour-BTpurple;
   height: 5vh;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   justify-content: center;
   h4 {
     color: white;
-    display: inline-block;
     justify-content: center;
+    vertical-align: middle;
     font-weight: bold;
-    padding: 20px;
   }
 }
 

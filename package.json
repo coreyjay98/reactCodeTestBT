@@ -16,14 +16,5 @@
   "bugs": {
     "url": "https://github.com/coreyjay98/reactCodeTestBT/issues"
   },
-  "homepage": "https://github.com/coreyjay98/reactCodeTestBT#readme",
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2",
-    "newsapi": "^2.4.1",
-    "node-sass": "^5.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "sass": "^1.32.8"
-  }
+  "homepage": "https://github.com/coreyjay98/reactCodeTestBT#readme"
 }
