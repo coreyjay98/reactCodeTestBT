@@ -30,6 +30,8 @@ Due to complications with the News API the only current way to use the app is to
 
 Simply clone the Repo and run the command `npx serve`, then go to whatever localhost port the serve package gives you and view the app there!
 
+It must be hosted off the localhost otherwise the API will not allow you to make calls and the app will not be functional.
+
 ### Usage
 
 I have included a short gif showing the usage of the app once it is on your localhost, also showcasing the mobile responsiveness in the CSS -
