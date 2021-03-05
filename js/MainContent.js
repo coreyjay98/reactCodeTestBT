@@ -35,6 +35,8 @@ const MainContent = () => {
       setFetching(false);
     } catch (error) {
       setFetchError(true);
+      setFetching(false);
+      setArticleFetch([]);
     }
   };
   return (
