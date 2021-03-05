@@ -22,11 +22,13 @@ A project created by **Corey Samuels**
 
 Simple React project using basic HTML alongside the React and Babel libraries to allow the user to search for the top 10 Articles from the News API for whatever they input
 
+I used SASS for the styling of the page and so used the SASS NPM package to map the SCSS file to the CSS file that the browser could interpret
+
 ### Installation
 
 Due to complications with the News API the only current way to use the app is to clone the repo and run on your own machine
 
-Simply clone the Repo and run the command `<npx serve>`, then go to whatever localhost port the serve package gives you and view the app there!
+Simply clone the Repo and run the command `npx serve`, then go to whatever localhost port the serve package gives you and view the app there!
 
 ### Usage
 
